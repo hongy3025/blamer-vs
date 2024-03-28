@@ -11,12 +11,12 @@ function activate(context) {
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
     // The commandId parameter must match the command field in package.json
-    let start = vscode.commands.registerCommand('extension.blameFile', function () {
+    let start = vscode.commands.registerCommand('svn-blame.Show', () => {
         // Initialise Blamer
         blamer.init();
     });
 
-    let clear = vscode.commands.registerCommand('extension.clearBlame', function () {
+    let clear = vscode.commands.registerCommand('svn-blame.Clear', () => {
         // Clear Blamer
         blamer.destroy();
     });

@@ -1,54 +1,44 @@
 {
-    "name": "blamer-vs",
-    "displayName": "SVN Gutter",
-    "description": "Visually blame SVN-stored code line-by-line",
+    "name": "svn-blame",
+    "displayName": "SVN Blame",
+    "description": " SVN blame code line-by-line",
     "version": "0.5.2",
-    "publisher": "beaugust",
+    "publisher": "yinghong",
     "repository": {
         "type": "git",
-        "url": "https://github.com/BeauAgst/blamer-vs.git"
+        "url": "https://github.com/hongy3025/blamer-vs.git"
     },
     "bugs": {
-        "url": "https://github.com/BeauAgst/blamer-vs/issues"
+        "url": "https://github.com/hongy3025/blamer-vs/issues"
     },
-    "homepage": "https://github.com/BeauAgst/blamer-vs",
+    "homepage": "https://github.com/hongy3025/blamer-vs",
     "icon": "img/blamer.png",
     "license": "MIT",
     "engines": {
-        "vscode": "^1.17.0"
+        "vscode": "^1.87.0"
     },
     "categories": [
         "SCM Providers",
         "Other"
     ],
-    "activationEvents": [
-        "onCommand:extension.blameFile"
-    ],
+    "activationEvents": [],
     "main": "./extension",
     "contributes": {
-        "keybindings": [
-            {
-                "command": "extension.blameFile",
-                "key": "ctrl+alt+d",
-                "mac": "ctrl+cmd+x",
-                "when": "editorTextFocus"
-            }
-        ],
         "commands": [
             {
-                "command": "extension.blameFile",
-                "title": "SVN Gutter - Show Blame"
+                "command": "svn-blame.Show",
+                "title": "SVN Blame Show"
             },
             {
-                "command": "extension.clearBlame",
-                "title": "SVN Gutter - Clear Blame"
+                "command": "svn-blame.Clear",
+                "title": "SVN Blame Clear"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "SVN Gutter configuration",
+            "title": "SVN Blame configuration",
             "properties": {
-                "svn-gutter.enablePips": {
+                "svn-blame.enablePips": {
                     "type": "boolean",
                     "default": true,
                     "description": "Enable/Disable visual 'pip' decoration, that sits alongside the line number."
@@ -57,16 +47,17 @@
         }
     },
     "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "lint": "eslint .",
+        "pretest": "pnpm run lint",
+        "test": "vscode-test"
     },
     "devDependencies": {
-        "@types/mocha": "^9.1.1",
-        "@types/node": "^18.14.5",
-        "eslint": "^8.14.0",
-        "mocha": "^9.2.2",
-        "typescript": "^4.9.5",
-        "vscode": "^1.1.37"
-    },
-    "dependencies": {}
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^20.11.30",
+        "@types/vscode": "^1.87.0",
+        "@vscode/test-cli": "^0.0.8",
+        "@vscode/test-electron": "^2.3.9",
+        "eslint": "^8.57.0",
+        "typescript": "^5.4.3"
+    }
 }

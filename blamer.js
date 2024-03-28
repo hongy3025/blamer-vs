@@ -15,7 +15,7 @@ const blamer = {
     init() {
         this.destroy();
         this.editor = vscode.window.activeTextEditor;
-        this.extensionPath = vscode.extensions.getExtension('beaugust.blamer-vs').extensionPath;
+        this.extensionPath = vscode.extensions.getExtension('yinghong.svn-blame').extensionPath;
         this.statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 0);
 
         this.updateStatusBar('Blamer Started');
@@ -48,7 +48,7 @@ const blamer = {
     },
 
     findUniques(revisions) {
-        this.uniqueCommits = Object.values(revisions).reduce((x,  y) => x.includes(y) ? x : [...x, y], []);
+        this.uniqueCommits = Object.values(revisions).reduce((x, y) => x.includes(y) ? x : [...x, y], []);
 
         const promises = this.uniqueCommits.map((unique) => subversion.getLog(unique)
             .then((commit) => {

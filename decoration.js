@@ -5,7 +5,7 @@ const decoration = {
 
     set(editor, line, commit) {
         const { enablePips } = vscode.workspace.getConfiguration('svn-gutter');
-        const path = vscode.extensions.getExtension('beaugust.blamer-vs').extensionPath;
+        const path = vscode.extensions.getExtension('yinghong.svn-blame').extensionPath;
         let decoration;
 
         if (enablePips) {
@@ -26,7 +26,7 @@ const decoration = {
         editor.setDecorations(
             decoration,
             [{
-                range: new vscode.Range(parseInt(line),0,parseInt(line),1000),
+                range: new vscode.Range(parseInt(line), 0, parseInt(line), 1000),
                 hoverMessage: new vscode.MarkdownString(`${commit.revision}: ${commit.author}\n\n${commit.date}\n\n${commit.message}`)
             }]
         );
