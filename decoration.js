@@ -4,11 +4,11 @@ const decoration = {
     decorations: [],
 
     set(editor, line, commit) {
-        const { enablePips } = vscode.workspace.getConfiguration('svn-gutter');
+        const { showGutterIcon } = vscode.workspace.getConfiguration('svn-blame');
         const path = vscode.extensions.getExtension('yinghong.svn-blame').extensionPath;
         let decoration;
 
-        if (enablePips) {
+        if (showGutterIcon) {
             decoration = vscode.window.createTextEditorDecorationType({
                 gutterIconPath: `${path}/img/${commit.image}`,
                 gutterIconSize: 'contain'

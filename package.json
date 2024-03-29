@@ -21,29 +21,45 @@
         "SCM Providers",
         "Other"
     ],
-    "activationEvents": [],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
     "main": "./extension",
     "contributes": {
         "commands": [
             {
-                "command": "svn-blame.Show",
-                "title": "SVN Blame Show"
+                "command": "svn-blame.show",
+                "title": "SVN Blame"
             },
             {
-                "command": "svn-blame.Clear",
-                "title": "SVN Blame Clear"
+                "command": "svn-blame.clear",
+                "title": "Clear SVN Blame"
             }
         ],
         "configuration": {
             "type": "object",
             "title": "SVN Blame configuration",
             "properties": {
-                "svn-blame.enablePips": {
+                "svn-blame.showGutterIcon": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Enable/Disable visual 'pip' decoration, that sits alongside the line number."
+                    "description": "行前是否显示blame图示"
+                },
+                "svn-blame.historyDaysLimit": {
+                    "type": "number",
+                    "default": 365,
+                    "description": "Blame多少天之内的历史提交"
                 }
             }
+        },
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "svn-blame.show",
+                    "alt": "svn-blame.clear",
+                    "group": "navigation"
+                }
+            ]
         }
     },
     "scripts": {

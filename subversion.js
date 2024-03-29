@@ -25,7 +25,10 @@ const subversion = {
 
     blame() {
         return new Promise((resolve, reject) => {
-            const script = `svn blame -x "-w --ignore-eol-style" "${this.path}"`;
+            const { historyDaysLimit } = vscode.workspace.getConfiguration('svn-blame');
+            const timeBegin = new Date(Date.now() - (historyDaysLimit * 24 * 60 * 60 * 1000));
+            const dateStr = '{' + timeBegin.toISOString().slice(0, 10) + '}';
+            const script = `svn blame --extensions "-w --ignore-eol-style" --revision "${dateStr}:HEAD" "${this.path}"`;
             const process = child_process.spawn(script, { shell: true })
 
             let [stdout, stderr] = ['', ''];
