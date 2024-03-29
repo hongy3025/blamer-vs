@@ -2,16 +2,16 @@
     "name": "svn-blame",
     "displayName": "SVN Blame",
     "description": " SVN blame code line-by-line",
-    "version": "0.5.2",
-    "publisher": "yinghong",
+    "version": "1.0.0",
+    "publisher": "hongy3025",
     "repository": {
         "type": "git",
-        "url": "https://github.com/hongy3025/blamer-vs.git"
+        "url": "https://github.com/hongy3025/vscode-svn-blame.git"
     },
     "bugs": {
-        "url": "https://github.com/hongy3025/blamer-vs/issues"
+        "url": "https://github.com/hongy3025/vscode-svn-blame/issues"
     },
-    "homepage": "https://github.com/hongy3025/blamer-vs",
+    "homepage": "https://github.com/hongy3025/vscode-svn-blame",
     "icon": "img/blamer.png",
     "license": "MIT",
     "engines": {

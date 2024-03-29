@@ -1,75 +1,12 @@
-[![](https://vsmarketplacebadge.apphb.com/version/beaugust.blamer-vs.svg)](https://marketplace.visualstudio.com/items?itemName=beaugust.blamer-vs)
-[![](https://vsmarketplacebadge.apphb.com/installs/beaugust.blamer-vs.svg)](https://marketplace.visualstudio.com/items?itemName=beaugust.blamer-vs)
+# VSCode Svn Blame
 
-# SVN Gutter
-This is the Visual Studio Code version of the [Blamer](https://github.com/BeauAgst/Blamer) plugin, built for Sublime Text. [Pull requests are always welcome!](https://github.com/BeauAgst/blamer-vs/issues/)
+## 说明
 
-## Commands:
-This extension contributes the following commands to the Command palette.
+这个插件从 `https://github.com/BeauAgst/svn-blamer` fork。新增了以下功能：
 
-`SVN Gutter - Show Blame`: Adds icons to gutter with tooltips containing information from each revision
+- 新增配置项 svn-blame.historyDaysLimit， 允许设置 svn blame 多少天之内的历史记录，以便提高 blame 性能。
+- 在文本编辑窗口区右上角，新增 "Svn Blame" 按钮，点按即可显示 svn blame 信息； 另外，按住 alt 键，再点击这个按钮，就会清除  svn blame 信息。
 
-`SVN Gutter - Clear Blame`: Clears icons and tooltips
+## 注意
 
-## Shortcuts:
-Currently only a single keyboard shortcut is available.
-
-**SVN Gutter - Show Blame**
-`CTRL + ALT + D` (Windows)
-`CTRL + CMD + X` (Mac)
-
-## Features
-When run, this extension will place an icon next to each line of your file. Each differently-coloured icon means a different revision. Hovering a line will produce a tooltip, showing the committer, date, and message. 
-
-For example if you're working on a project and you want to see who modified a specific line:
-
-![Example Usage](example.gif)
-
-## Requirements
-This extension requires that you're either:
-
-* On a Windows machine with Tortoise SVN installed, with command-line tools.
-* A Unix machine.
-
-## Extension Settings
-**Enable Pips** - By default, the extension displays a coloured pip next to each line number. This can be turned off, whilst still showing the blame information in the tooltip.
-
-## Known Issues
-- A little bit slow, because all unique logs have to be retrieved first. ([#3](https://github.com/BeauAgst/blamer-vs/issues/3))
-- Authentication errors [#5](https://github.com/BeauAgst/blamer-vs/issues/5), [#9](https://github.com/BeauAgst/blamer-vs/issues/9)
-
-## Future features
-- Automatic blame on file open
-- Ideas and contributions always welcome!
-
-## Release Notes
-
-## 0.5.1
-- Handle cases where author metadata is missing [#53](https://github.com/BeauAgst/blamer-vs/issues/53)
-- Use spawn instead of exec [#53](https://github.com/BeauAgst/blamer-vs/issues/53)
-- Dependency updates
-
-## 0.5.0
-- Mac blame shortcut added
-- Setting added to disable visual pips [#10](https://github.com/BeauAgst/blamer-vs/issues/10)
-- Better error handling, blame indicator in workbench [#3](https://github.com/BeauAgst/blamer-vs/issues/3)
-
-## 0.4.0
-- Revision number added to tooltips [#7](https://github.com/BeauAgst/blamer-vs/issues/7)
-
-## 0.3.2
-- Fixed decoration issue causing characters to show incorrectly dependant on the language [#6](https://github.com/BeauAgst/blamer-vs/issues/6)
-
-## 0.3.1
-- Removed formatting error in decoration caused by conflict with `mailto:`
-- Added icon to extension
-
-## 0.3.0
-- Linux support added. [#2](https://github.com/BeauAgst/blamer-vs/issues/2)
-
-## 0.2.0
-- Added keyboard shortcut
-- Fixed readme typo
-
-## 0.1.0
-- Initial release
+本插件要求系统命令行中存在 `svn` 命令。
