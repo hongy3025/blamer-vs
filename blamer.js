@@ -15,7 +15,7 @@ const blamer = {
     init() {
         this.destroy();
         this.editor = vscode.window.activeTextEditor;
-        this.extensionPath = vscode.extensions.getExtension('yinghong.svn-blame').extensionPath;
+        this.extensionPath = vscode.extensions.getExtension('hongy3025.svn-blame').extensionPath;
         this.statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 0);
 
         this.updateStatusBar('Blamer Started');

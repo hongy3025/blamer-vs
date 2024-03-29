@@ -5,7 +5,7 @@ const decoration = {
 
     set(editor, line, commit) {
         const { showGutterIcon } = vscode.workspace.getConfiguration('svn-blame');
-        const path = vscode.extensions.getExtension('yinghong.svn-blame').extensionPath;
+        const path = vscode.extensions.getExtension('hongy3025.svn-blame').extensionPath;
         let decoration;
 
         if (showGutterIcon) {
