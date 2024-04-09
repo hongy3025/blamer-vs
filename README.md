@@ -20,3 +20,7 @@ This plugin a fork from `https://github.com/BeauAgst/svn-blamer`.
 This plug-in requires the presence of the 'svn' command on the system command line.
 
 本插件要求系统命令行中存在 `svn` 命令。
+
+## URLs
+
+https://marketplace.visualstudio.com/manage/
